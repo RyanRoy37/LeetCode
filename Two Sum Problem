@@ -1,0 +1,83 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int a[]=new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    a[0]=i;
+                    a[1]=j;
+                    return a;
+                }
+            }
+        }
+        return a;
+    }
+}
+
+// The below code takes input from the user, which isn't expected in Leetcode. This shall rectified in future problems
+/*import java.util.*;
+class Solution {
+    static int n;
+    public int[] twoSum(int[] nums, int target) {
+            int position;
+            int result[]=new int[2];
+            int arr[]=nums;
+            int tar=target;
+        for(int i=0;i<n;i++){
+            for (int j=i+1;j<n;j++){
+            if(arr[i]+arr[j]==tar){
+                result[0]=i;
+                result[1]=j;
+               break;
+            }
+            }
+            break;
+        }    
+         return result;
+    }
+     public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Size of Array");
+       // n=sc.nextInt();
+        int[] a=new int[100];
+        int i;
+        System.out.println("Enter numbers");
+        for(i=0;i<n;i++)
+        a[i]=sc.nextInt();
+        System.out.println("Enter the resultant sum");
+        int sum=sc.nextInt();
+        Solution obj=new Solution();
+        int result[]=new int[2];
+        //for(int j=0;j<2;j++)
+        result=obj.twoSum(a,sum);
+        System.out.println(result[0]+" ,"+result[1]);
+}
+}
+/*
+import java.util.*;
+class twosum{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Size of Array");
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        int i;
+        System.out.println("Enter "+n+" numbers");
+        for(i=0;i<n;i++)
+        a[i]=sc.nextInt();
+        System.out.println("Enter the resultant sum");
+        int sum=sc.nextInt();
+        int position;
+        for(i=0;i<n;i++){
+            for (int j=i+1;j<n;j++){
+            if(a[i]+a[j]==sum){
+                System.out.println("[" +i+", "+j+" ]");
+            }
+            }
+        }
+        
+    }
+}
+*/
