@@ -1,0 +1,36 @@
+class Solution {
+     public int strStr(String haystack, String needle) {
+        int n=needle.length();
+        int m=haystack.length();
+        int a=-1;
+        char s[]=new char[n];
+        for(int i=0;i<n;i++)
+        s[i]=needle.charAt(i);
+        outerloop:
+        for (int i=0;i<=(m-n);i++)
+
+ {
+     //System.out.println(i);
+      //System.out.println(haystack.charAt(i));
+      //System.out.println(s[0]);
+    if((i+n)<=m && haystack.charAt(i)==s[0]){
+        a=i;
+       //System.out.println(a);
+        //System.out.println(needle.charAt(i));
+        int num=0;
+        for (int j=i;j<m;j++){
+            
+            if(haystack.charAt(j)==s[num]){
+                //System.out.println(haystack.charAt(j));
+                //System.out.println(s[num]);
+                if(num==(n-1))
+                break outerloop;
+                num++;
+            }
+            else {a=-1; break;}
+        }
+    }
+ }       
+    return a;
+    }
+}
